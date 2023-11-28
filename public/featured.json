@@ -1,44 +1,50 @@
 [
     {
         "featured_id": "1",
-        "name": "Future Technology Adoption",
+        "title": "Future Technology Adoption",
         "description": "Survey how users feel about the adoption of emerging technologies like artificial intelligence, blockchain, or virtual reality.",
         "image": "https://i.ibb.co/yNcH4FB/father-sons.jpg",
+        "vote": 2,
         "price": 14.7
     },
     {
         "featured_id": "2",
-        "name": "Remote Work Satisfaction",
+        "title": "Remote Work Satisfaction",
         "description": "Investigate the experiences of individuals working remotely. Assess the challenges, benefits, and preferences for remote work.",
         "image": "https://i.ibb.co/gy4mXFS/young-handsome.jpg",
+        "vote": 4,
         "price": 14.7
     },
     {
         "featured_id": "3",
-        "name": "Mental Health Awareness",
+        "title": "Mental Health Awareness",
         "description": "Examine the awareness and attitudes towards mental health. Explore how people perceive mental health issues",
         "image": "https://i.ibb.co/MRKbN5d/mental-health.jpg",
+        "vote": 1,
         "price": 14.5
     },
     {
         "featured_id": "4",
-        "name": "Environmental Concerns",
+        "title": "Environmental Concerns",
         "description": "Gauge public concern and awareness about environmental issues such as climate change, pollution, and sustainability.",
         "image": "https://i.ibb.co/4gCy7Vq/portrait-young.jpg",
+        "vote": 6,
         "price": 12.5
     },
     {
         "featured_id": "5",
-        "name": "Health and Fitness Trends",
+        "title": "Health and Fitness Trends",
         "description": "Explore current health and fitness trends, including preferred workout methods, dietary choices, and overall wellness practices.",
         "image": "https://i.ibb.co/xhghb79/smiling-people.jpg",
+        "vote": 8,
         "price": 14.5
     },
     {
         "featured_id": "6",
-        "name": "Entertainment Consumption Habits",
+        "title": "Entertainment Consumption Habits",
         "description": "Investigate how people consume entertainment, including preferences for streaming services, gaming habits, and social media usage. ",
         "image": "https://i.ibb.co/M7yrmHr/friends-watching.jpg",
+        "vote": 5,
         "price": 12.5
     }
 ]

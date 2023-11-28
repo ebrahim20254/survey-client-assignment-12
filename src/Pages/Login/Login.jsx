@@ -1,14 +1,17 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img  from '../../assets/login.svg';
 import { useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-  const {signIn}  = useContext(AuthContext)
+  const {signIn}  = useContext(AuthContext);
+  const navigate = useNavigate();
    const location =  useLocation();;
-   console.log(location);
-
+  //  console.log(location);
+   
+  const from = location.state?.from?.pathname || "/";
 
     const handleLogin = event =>{
         event.preventDefault()
@@ -21,6 +24,24 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            Swal.fire({
+              title: "USER LOGIN SUCCESSFULLY",
+              showClass: {
+                popup: `
+                  animate__animated
+                  animate__fadeInUp
+                  animate__faster
+                `
+              },
+              hideClass: {
+                popup: `
+                  animate__animated
+                  animate__fadeOutDown
+                  animate__faster
+                `
+              }
+            });
+            navigate("/", form, {replace: true});
         })
         .catch(error => console.log(error))
     }
@@ -61,7 +82,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-        </>
+       </>
     );
 };
 

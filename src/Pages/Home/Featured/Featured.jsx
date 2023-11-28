@@ -6,7 +6,7 @@ const Featured = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(()=>{
-        fetch('/featured.json')
+        fetch('http://localhost:5000/survey')
         .then(res => res.json())
         .then(data => {
             setUsers(data);
