@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import img  from '../../assets/login.svg'
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const {createUser} = useContext(AuthContext);
@@ -23,8 +24,12 @@ const Register = () => {
         .catch(error => console.error(error))
     }
     return (
-        <div>
-             <div className="hero min-h-screen bg-base-200 w-[90%] mx-auto my-10">
+          <>
+          <Helmet>
+                <title>survey-Man / SignUp</title>
+            </Helmet>
+
+        <div className="hero min-h-screen bg-orange-200 w-[90%] mx-auto my-10">
         <div className="hero-content flex-col lg:flex-row">
           <div className="  mr-12">
             <img src={img} alt="" />
@@ -61,7 +66,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-        </div>
+          </>
     );
 };
 

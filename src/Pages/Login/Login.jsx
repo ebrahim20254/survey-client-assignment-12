@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import img  from '../../assets/login.svg';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const {signIn}  = useContext(AuthContext)
@@ -24,7 +25,12 @@ const Login = () => {
         .catch(error => console.log(error))
     }
     return (
-        <div className="hero min-h-screen bg-base-200 w-[90%] mx-auto my-10">
+        <>
+          <Helmet>
+                <title>survey-Man / Login</title>
+            </Helmet>
+        
+        <div className="hero min-h-screen bg-orange-200 w-[90%] mx-auto my-10">
         <div className="hero-content flex-col lg:flex-row">
           <div className="  mr-12">
             <img src={img} alt="" />
@@ -48,13 +54,14 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <input className="btn btn-primary" type="submit" value="Login" />
+                <input className="btn btn-secondary" type="submit" value="Login" />
               </div>
             </form>
-            <p className='my-4 text-center'>New to Car doctor? <Link className='text-orange-600 font-bold' to="/register">Register</Link> </p>
+            <p className='my-4 text-center'>New to Car doctor? <Link className='text-orange-600 font-bold' to="/register">SignUp</Link> </p>
           </div>
         </div>
       </div>
+        </>
     );
 };
 

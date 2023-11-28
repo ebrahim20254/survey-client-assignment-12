@@ -1,50 +1,44 @@
 [
     {
-        "_id": "1",
-        "name": "Haddock",
-        "recipe": "Chargrilled fresh tuna steak (served medium rare) on classic Niçoise salad with French beans.",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
-        "category": "salad",
+        "featured_id": "1",
+        "name": "Future Technology Adoption",
+        "description": "Survey how users feel about the adoption of emerging technologies like artificial intelligence, blockchain, or virtual reality.",
+        "image": "https://i.ibb.co/yNcH4FB/father-sons.jpg",
         "price": 14.7
     },
     {
-        "_id": "2",
-        "name": "Haddock",
-        "recipe": "Chargrilled fresh tuna steak (served medium rare) on classic Niçoise salad with French beans.",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
-        "category": "drinks",
+        "featured_id": "2",
+        "name": "Remote Work Satisfaction",
+        "description": "Investigate the experiences of individuals working remotely. Assess the challenges, benefits, and preferences for remote work.",
+        "image": "https://i.ibb.co/gy4mXFS/young-handsome.jpg",
         "price": 14.7
     },
     {
-        "_id": "3",
-        "name": "Escalope de Veau",
-        "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
-        "category": "popular",
+        "featured_id": "3",
+        "name": "Mental Health Awareness",
+        "description": "Examine the awareness and attitudes towards mental health. Explore how people perceive mental health issues",
+        "image": "https://i.ibb.co/MRKbN5d/mental-health.jpg",
         "price": 14.5
     },
     {
-        "_id": "4",
-        "name": "Escalope de Veau",
-        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-        "category": "dessert",
+        "featured_id": "4",
+        "name": "Environmental Concerns",
+        "description": "Gauge public concern and awareness about environmental issues such as climate change, pollution, and sustainability.",
+        "image": "https://i.ibb.co/4gCy7Vq/portrait-young.jpg",
         "price": 12.5
     },
     {
-        "_id": "5",
-        "name": "Roast Duck Breast",
-        "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
-        "category": "popular",
+        "featured_id": "5",
+        "name": "Health and Fitness Trends",
+        "description": "Explore current health and fitness trends, including preferred workout methods, dietary choices, and overall wellness practices.",
+        "image": "https://i.ibb.co/xhghb79/smiling-people.jpg",
         "price": 14.5
     },
     {
-        "_id": "6",
-        "name": "Escalope de Veau",
-        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-        "category": "dessert",
+        "featured_id": "6",
+        "name": "Entertainment Consumption Habits",
+        "description": "Investigate how people consume entertainment, including preferences for streaming services, gaming habits, and social media usage. ",
+        "image": "https://i.ibb.co/M7yrmHr/friends-watching.jpg",
         "price": 12.5
     }
 ]
