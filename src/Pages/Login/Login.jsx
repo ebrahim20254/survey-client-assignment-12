@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../../components/Socal/SocalLogin";
 
 const Login = () => {
   const {signIn}  = useContext(AuthContext);
@@ -52,7 +53,7 @@ const Login = () => {
                 <title>survey-Man / Login</title>
             </Helmet>
         
-        <div className="hero min-h-screen bg-orange-200 w-[90%] mx-auto my-10">
+        <div className="hero min-h-screen bg-blue-300 w-[90%] mx-auto my-10">
         <div className="hero-content flex-col lg:flex-row">
           <div className="  mr-12">
             <img src={img} alt="" />
@@ -77,6 +78,7 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <input className="btn btn-secondary" type="submit" value="Login" />
+                <SocialLogin></SocialLogin>
               </div>
             </form>
             <p className='my-4 text-center'>New to Car doctor? <Link className='text-orange-600 font-bold' to="/signUp">SignUp</Link> </p>

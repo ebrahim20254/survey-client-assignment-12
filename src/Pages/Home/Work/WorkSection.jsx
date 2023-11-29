@@ -17,7 +17,7 @@ const WorkSection = () => {
                     <div className="lg:w-1/2 space-y-6">
                         <div className=' flex gap-4'>
                             <div>
-                                <img src={img1} className='w-[100px]' alt="" />
+                                <img src={img1} className='w-[100px] rounded-full' alt="" />
                             </div>
                             <div>
                                 <h2 className=' text-2xl font-bold'>How does online polling work?</h2>
@@ -27,7 +27,7 @@ const WorkSection = () => {
 
                         <div className=' flex gap-4'>
                             <div>
-                                <img src={img2} className='w-[100px]' alt="" />
+                                <img src={img2} className='w-[100px] rounded-full' alt="" />
                             </div>
                             <div>
                                 <h2 className=' text-2xl font-bold'>How do I build a voting website?</h2>
@@ -37,7 +37,7 @@ const WorkSection = () => {
 
                         <div className=' flex gap-4'>
                             <div>
-                                <img src={img3} className='w-[100px]' alt="" />
+                                <img src={img3} className='w-[100px] rounded-full' alt="" />
                             </div>
                             <div>
                                 <h2 className=' text-2xl font-bold'>How do web based surveys work?</h2>

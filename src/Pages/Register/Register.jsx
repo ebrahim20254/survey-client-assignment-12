@@ -5,45 +5,54 @@ import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Register = () => {
+    const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
     const {createUser, updateUserProfile} = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const onSubmit = data => {
+
         createUser(data.email, data.password)
-        .then(result => {
-            const loggedUser =  result.user;
-            console.log(loggedUser);
-            updateUserProfile(data.name, data.photoURL)
-            .then(() => {
-                console.log('user profile info updated')
-                reset();
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'User created successfully.',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        // create user entry in the database
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user added to the database')
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/');
+                                }
+                            })
 
-                navigate('/login');
 
+                    })
+                    .catch(error => console.log(error))
             })
-        })
-        .catch(error => {
-          console.log(error);
-        })
-    }
-
+    };
     return (
        <>
         <Helmet>
                 <title>Survey-Man | signUp</title>
             </Helmet>
-        <div className="hero min-h-screen bg-base-200 w-[90%] mx-auto my-10">
+        <div className="hero min-h-screen bg-orange-300 w-[90%] mx-auto my-10">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="  mr-12">
                     <img src={img} className='w-[400px]' alt="" />
