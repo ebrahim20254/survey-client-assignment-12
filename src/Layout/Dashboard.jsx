@@ -14,8 +14,14 @@ const Dashboard = () => {
                     <li><NavLink to="/dashboard/cart">MyCart</NavLink></li>
                     <li>
                         <NavLink to="/dashboard/userHome">
-                            <FaHome></FaHome>
+                            <FaShoppingCart></FaShoppingCart>
                             User Home</NavLink>
+                    </li>
+                    <div className="divider"></div>
+                    <li>
+                        <NavLink to="/">
+                            <FaHome></FaHome>
+                            Home</NavLink>
                     </li>
                 </ul>
             </div>
