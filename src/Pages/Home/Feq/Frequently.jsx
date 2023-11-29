@@ -2,7 +2,7 @@
 
 const Frequently = () => {
     return (
-        <div>
+        <div className=" my-6">
             <h2 className=" text-4xl text-center font-bold">Frequently asked questions</h2>
             <div className=" space-y-6">
                 <div className="collapse collapse-arrow bg-base-200 my-6">

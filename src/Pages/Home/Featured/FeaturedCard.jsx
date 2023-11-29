@@ -12,7 +12,7 @@ const FeaturedCard = ({ feature }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const axiosSecure = useAxiosSecure();
-    const [refetch] = useCart();
+    const [, refetch] = useCart();
 
     const handleAddToCart = cart =>{
         // console.log(cart);
