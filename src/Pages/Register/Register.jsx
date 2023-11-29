@@ -29,7 +29,7 @@ const Register = () => {
                     timer: 1500
                 });
 
-                navigate('/');
+                navigate('/login');
 
             })
         })
