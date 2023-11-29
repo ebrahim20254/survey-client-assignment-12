@@ -2,10 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import logo from '../../../assets/logo.jpg';
 import { AuthContext } from "../../../providers/AuthProvider";
+import useCart from "../../../hooks/useCart";
 
-const Navbar = () => {
-
+export const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+
+    const [cart] = useCart();
 
     const handleLogOut = () => {
         logOut()
@@ -17,7 +19,7 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">about</NavLink></li>
         <li><NavLink to="/service">Services</NavLink></li>
-        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+        <li><NavLink to="/dashboard/cart">Dashboard: {cart.length}</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
     </>
     return (

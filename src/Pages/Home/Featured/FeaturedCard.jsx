@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useCart from "../../../hooks/useCart";
 
 
 
@@ -11,6 +12,7 @@ const FeaturedCard = ({ feature }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const axiosSecure = useAxiosSecure();
+    const [refetch] = useCart();
 
     const handleAddToCart = cart =>{
         // console.log(cart);
@@ -35,7 +37,7 @@ const FeaturedCard = ({ feature }) => {
                         timer: 1500
                     });
                     // refetch cart to update the cart items count
-                    // refetch();
+                    refetch();
                 }
 
             })

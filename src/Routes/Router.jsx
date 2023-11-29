@@ -5,6 +5,8 @@ import ErrorPage from "../Pages/Error/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import DetailPage from "../Pages/Details/DetailPage";
+import Dashboard from "../Layout/Dashboard";
+import Cart from "../Pages/UserDashboard/Cart/Cart";
 
 
 const router = createBrowserRouter([
@@ -22,12 +24,23 @@ const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: '/register',
+                path: '/signUp',
                 element: <Register></Register>
             },
             {
                 path: 'details/:id',
                 element: <DetailPage></DetailPage>
+            }
+        ]
+    },
+
+    {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'cart',
+                element: <Cart></Cart>
             }
         ]
     }
