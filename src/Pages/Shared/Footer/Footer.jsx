@@ -4,16 +4,16 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-blue-300 text-base-content my-6 rounded-lg">
             <aside>
-                <img className='h-[100px] w-[100px]' src={logo} alt="" />
+                <img className='h-[100px] w-[100px] rounded-full' src={logo} alt="" />
                 <h2 className=' text-2xl'>Polling Survey</h2>
                 <p>Best Online Polling Survey Website</p>
             </aside>
             <nav>
                 <header className="footer-title">Services</header>
-                <a className="link link-hover">Branding</a>
+                <a className="link link-hover">Polling</a>
                 <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <a className="link link-hover">vote</a>
+                <a className="link link-hover">Survey</a>
             </nav>
             <nav>
             <header className="footer-title">company</header>

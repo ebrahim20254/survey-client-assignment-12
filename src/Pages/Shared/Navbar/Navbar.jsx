@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
-import logo from '../../../assets/logo.jpg';
+import logo from '../../../assets/download.png';
 import { AuthContext } from "../../../providers/AuthProvider";
 import useCart from "../../../hooks/useCart";
 
@@ -23,7 +23,7 @@ export const Navbar = () => {
         <li><NavLink to="/login">Login</NavLink></li>
     </>
     return (
-        <div className="navbar bg-orange-400 my-6">
+        <div className="navbar bg-orange-400 my-6 rounded-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,7 +35,7 @@ export const Navbar = () => {
                 </div>
                 <div className=" flex items-center">
                     <Link to="/" className="btn btn-ghost normal-case text-xl">
-                        <img className=" w-[100px] h-[100px]  -mt-6" src={logo} alt="" />
+                        <img className=" w-[100px] h-[80px] rounded-lg  -mt-6" src={logo} alt="" />
                     </Link>
                     <h1 className=" text-2xl font-bold">Survey<span className=" text-white">Man</span></h1>
                 </div>
@@ -46,14 +46,18 @@ export const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                
+                <img className=" rounded-full mr-4" src={user?.photoURL} alt="" />
+                <p className="mr-4">{user?.email}</p>
                 {
-                    user ? <>
-                        <span>{user?.displayName}</span>
-                        <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
-                    </> : <>
-                        <li><Link to="/login">Login</Link></li>
-                    </>
+                    user ?
+                        <button onClick={handleLogOut} className="btn btn-secondary">LogOut</button>
+                        :
+                        <Link to="/login">
+                            <button className="btn btn-warning">Login</button>
+                        </Link>
                 }
+
             </div>
         </div>
     );
