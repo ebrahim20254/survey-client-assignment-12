@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import Featured from "../Featured/Featured";
 import Frequently from "../Feq/Frequently";
 import Testimonial from "../../Testimonials/Testimonial";
+import WorkSection from "../Work/WorkSection";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <Featured></Featured>
+            <WorkSection></WorkSection>
             <Testimonial></Testimonial>
             <Frequently></Frequently>
         </div>
