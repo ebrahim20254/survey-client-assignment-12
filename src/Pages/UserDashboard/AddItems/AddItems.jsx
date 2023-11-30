@@ -26,7 +26,7 @@ const AddItems = () => {
             const surveyItem = {
                 name: data.title,
                 category: data.category,
-                like: parseFloat(data.like),
+                vote: parseFloat(data.vote),
                 description: data.description,
                 image: res.data.data.display_url
             }
@@ -85,8 +85,8 @@ const AddItems = () => {
                             </label>
                             <input
                                 type="number"
-                                placeholder="like"
-                                {...register('like', { required: true })}
+                                placeholder="vote"
+                                {...register('vote', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
 

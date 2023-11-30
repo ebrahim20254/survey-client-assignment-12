@@ -23,18 +23,23 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to="/dashboard/addItems">
                                     <FaVoteYea></FaVoteYea>
-                                    Add Items</NavLink>
+                                    Add Vote</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/manageItems">
                                     <FaList></FaList>
-                                    Manage Items</NavLink>
+                                    Manage Vote</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/bookings">
                                     <FaBook></FaBook>
                                     Manage Bookings</NavLink>
                             </li>
+                            <li>
+                                    <NavLink to="/dashboard/cart">
+                                        <FaShoppingCart></FaShoppingCart>
+                                        My Cart ({cart.length})</NavLink>
+                                </li>
                             <li>
                                 <NavLink to="/dashboard/users">
                                     <FaUsers></FaUsers>
@@ -53,11 +58,11 @@ const Dashboard = () => {
                                         <FaCalendar></FaCalendar>
                                         Reservation</NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink to="/dashboard/cart">
                                         <FaShoppingCart></FaShoppingCart>
                                         My Cart ({cart.length})</NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink to="/dashboard/review">
                                         <FaAd></FaAd>
