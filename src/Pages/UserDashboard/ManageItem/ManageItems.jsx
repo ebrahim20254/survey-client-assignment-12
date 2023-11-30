@@ -39,7 +39,7 @@ const ManageItems = () => {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: `${item.name} has been deleted`,
+                        title: `${item.title} has been deleted`,
                         showConfirmButton: false,
                         timer: 1500
                     });

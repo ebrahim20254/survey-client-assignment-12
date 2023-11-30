@@ -60,14 +60,14 @@ const FeaturedCard = ({ feature }) => {
         }
     }
     return (
-        <div className="card w-96 bg-base-200 shadow-xl my-6">
+        <div className="card w-96 bg-blue-200 shadow-xl my-6">
             <figure className="">
                 <img src={image} alt="Shoes" className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{title}</h2>
+                <h2 className=" text-2xl font-bold">{title}</h2>
                 <p>{description}</p>
-                <p>Vote: {vote}</p>
+                <p className=" text-xl font-medium text-orange-600">Vote: {vote}</p>
                 <div className="card-actions">
                      <button onClick={() => handleAddToCart(feature)} 
                      className="btn btn-secondary  w-full px-12 mt-4">View Details</button>

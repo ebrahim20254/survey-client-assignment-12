@@ -1,21 +1,23 @@
 import { useForm } from "react-hook-form";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import {  FaVoteYea } from "react-icons/fa";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { useLoaderData } from "react-router-dom";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=ae35b060d88ff7d57b190b08921f674d`;
 
-const AddItems = () => {
+const UpdateItem = () => {
+    const {_id, image, title , description, vote} = useLoaderData();
+ 
     const { register, handleSubmit, reset } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const onSubmit = async (data) => {
         console.log(data)
-        // image upload to imgbb and then get an url
+
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
             headers: {
@@ -23,7 +25,7 @@ const AddItems = () => {
             }
         });
         if (res.data.success) {
-            // now send the menu item data to the server with the image url
+
             const surveyItem = {
                 name: data.title,
                 category: data.category,
@@ -32,15 +34,15 @@ const AddItems = () => {
                 image: res.data.data.display_url
             }
             // 
-            const surveyRes = await axiosSecure.post('/survey', surveyItem);
+            const surveyRes = await axiosSecure.patch(`/survey/${_id}`, surveyItem);
             console.log(surveyRes.data)
-            if(surveyRes.data.insertedId){
-                // show success popup
+            if(surveyRes.data.modifiedCount > 0){
+
                 reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data. title} is added to the survey.`,
+                    title: `${data. title} is updated to the survey.`,
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -51,7 +53,7 @@ const AddItems = () => {
 
     return (
         <div>
-            <SectionTitle heading="add an item" subHeading="What's new?" ></SectionTitle>
+            <SectionTitle heading="Update an Vote" subHeading="Refresh info"></SectionTitle>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full my-6">
@@ -59,7 +61,7 @@ const AddItems = () => {
                             <span className="label-text">Voter Name</span>
                         </label>
                         <input
-                            type="text"
+                            type="text" defaultValue={title}
                             placeholder="Voter Name"
                             {...register('title', { required: true })}
                             required
@@ -85,7 +87,7 @@ const AddItems = () => {
                                 <span className="label-text">Like & Dislike</span>
                             </label>
                             <input
-                                type="number"
+                                type="number" defaultValue={vote}
                                 placeholder="vote"
                                 {...register('vote', { required: true })}
                                 className="input input-bordered w-full" />
@@ -98,7 +100,7 @@ const AddItems = () => {
                         <label className="label">
                             <span className="label-text">Description</span>
                         </label>
-                        <textarea {...register('description')} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
+                        <textarea defaultValue={description} {...register('description')} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
                     </div>
 
                     <div className="form-control w-full my-6">
@@ -106,7 +108,7 @@ const AddItems = () => {
                     </div>
 
                     <button className="btn">
-                        Add Vote <FaVoteYea className="ml-4 text-xl"></FaVoteYea>
+                        Update Vote <FaVoteYea className="ml-4 text-xl"></FaVoteYea>
                     </button>
                 </form>
             </div>
@@ -114,4 +116,4 @@ const AddItems = () => {
     );
 };
 
-export default AddItems;
+export default UpdateItem;

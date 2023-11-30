@@ -1,4 +1,4 @@
-import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers,  FaVoteYea } from "react-icons/fa";
+import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaVoteYea } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
@@ -13,12 +13,17 @@ const Dashboard = () => {
             {/* dashboard side bar */}
             <div className="w-64 min-h-screen bg-blue-400">
                 <ul className="menu p-4">
-                {
+                    {
                         isAdmin ? <>
                             <li>
                                 <NavLink to="/dashboard/adminHome">
                                     <FaHome></FaHome>
                                     Admin Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/userHome">
+                                    <FaHome></FaHome>
+                                    User Home</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/addItems">
@@ -31,15 +36,10 @@ const Dashboard = () => {
                                     Manage Vote</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/bookings">
-                                    <FaBook></FaBook>
-                                    Manage Bookings</NavLink>
+                                <NavLink to="/dashboard/cart">
+                                    <FaShoppingCart></FaShoppingCart>
+                                    My Vote Cart</NavLink>
                             </li>
-                            <li>
-                                    <NavLink to="/dashboard/cart">
-                                        <FaShoppingCart></FaShoppingCart>
-                                        My Cart ({cart.length})</NavLink>
-                                </li>
                             <li>
                                 <NavLink to="/dashboard/users">
                                     <FaUsers></FaUsers>
@@ -48,11 +48,6 @@ const Dashboard = () => {
                         </>
                             :
                             <>
-                                <li>
-                                    <NavLink to="/dashboard/userHome">
-                                        <FaHome></FaHome>
-                                        User Home</NavLink>
-                                </li>
                                 <li>
                                     <NavLink to="/dashboard/reservation">
                                         <FaCalendar></FaCalendar>

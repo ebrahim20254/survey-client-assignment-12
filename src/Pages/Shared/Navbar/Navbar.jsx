@@ -18,7 +18,7 @@ export const Navbar = () => {
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/survey">Survey</NavLink></li>
-        <li><NavLink to="/dashboard/cart">Dashboard: {cart.length}</NavLink></li>
+        <li><NavLink to="/dashboard/cart">Dashboard</NavLink></li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
     </>

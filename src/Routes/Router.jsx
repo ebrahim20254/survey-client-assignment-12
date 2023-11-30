@@ -12,6 +12,9 @@ import AllUsers from "../Pages/UserDashboard/AllUsers/AllUsers";
 import AddItems from "../Pages/UserDashboard/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
 import ManageItems from "../Pages/UserDashboard/ManageItem/ManageItems";
+import AdminHome from "../Pages/UserDashboard/AdminHome/AdminHome";
+import UserHome from "../Pages/UserDashboard/UserHome/UserHome";
+import UpdateItem from "../Pages/UserDashboard/UpdateItem/UpdateItem";
 
 
 const router = createBrowserRouter([
@@ -44,11 +47,20 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
+                path: 'userHome',
+                element:<UserHome></UserHome>
+            },
+
+            {
                 path: 'cart',
                 element: <Cart></Cart>
             },
 
             // admin route 
+            {
+                path: 'adminHome',
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+            },
             {
                 path: 'addItems',
                 element: <AdminRoute><AddItems></AddItems></AdminRoute>
@@ -57,6 +69,11 @@ const router = createBrowserRouter([
                 path: 'manageItems',
                 element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
             },
+            {
+                path: 'updateItem/:id',
+                element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/survey/${params.id}`)
+              },
             {
                 path: 'users',
                 element: <AllUsers></AllUsers>
