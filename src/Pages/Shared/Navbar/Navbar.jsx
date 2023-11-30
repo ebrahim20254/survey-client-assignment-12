@@ -17,9 +17,9 @@ export const Navbar = () => {
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">about</NavLink></li>
-        <li><NavLink to="/service">Services</NavLink></li>
+        <li><NavLink to="/survey">Survey</NavLink></li>
         <li><NavLink to="/dashboard/cart">Dashboard: {cart.length}</NavLink></li>
+        <li><NavLink to="/contact">Contact Us</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
     </>
     return (

@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/Socal/SocalLogin";
 
 const Register = () => {
     const axiosPublic = useAxiosPublic();
@@ -94,7 +95,8 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn bg-[#D1A054B2] " type="submit" value="SignUp" />
+                            <input className="btn btn-primary " type="submit" value="SignUp" />
+                            <SocialLogin></SocialLogin>
                         </div>
                     </form>
                     <p className='my-4 text-center'>Already registered? Go to log in <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
