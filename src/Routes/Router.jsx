@@ -72,7 +72,7 @@ const router = createBrowserRouter([
             {
                 path: 'updateItem/:id',
                 element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/survey/${params.id}`)
+                loader: ({params}) => fetch(`https://survey-server-assignment-12.vercel.app/survey/${params.id}`)
               },
             {
                 path: 'users',

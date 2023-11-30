@@ -6,7 +6,7 @@ const Featured = () => {
     const [featured, setFeatured] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/survey')
+        fetch('https://survey-server-assignment-12.vercel.app/survey')
         .then(res => res.json())
         .then(data => {
             setFeatured(data);

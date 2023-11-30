@@ -11,10 +11,10 @@
 
 ## Discuss how you managed the state in your assignment project.
 
-This is a Survey Man website. There are ten sections of the website.navbar is done first. then the json file is created.the names are shown from inside the card by placing the onclick  button.Create  component folder inside src folder and create. card folder inside it all data is shown inside card then create folder named.Navbar Next to the login and registration button, the authentication system is used. myBid Request done in this website.  And finally add to cart private route click my cart page show data .
+This is a Survey Man website. There are ten sections of the website.navbar is done first. then the json file is created.the names are shown from inside the card by placing the onclick  button.Create  component folder inside src folder and create. card folder inside it all data is shown inside card then create folder named.Navbar Next to the login and registration button, the authentication system is used. myBid Request done in this website.  And finally add to cart private route click dashboard page show data .
 
 I designed the website myself. And I tried to make the design beautiful according to my efforts. Please pray for me that I can become a good developer and make my future beautiful.
 
 
 
-## http://localhost:5173/
+## https://survey-client-assignment-12.web.app/

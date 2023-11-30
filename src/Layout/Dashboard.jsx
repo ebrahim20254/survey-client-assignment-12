@@ -2,6 +2,7 @@ import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShopp
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
+import { Helmet } from "react-helmet-async";
 
 
 const Dashboard = () => {
@@ -9,6 +10,11 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin();
 
     return (
+        
+      <>
+      <Helmet>
+                <title>survey-Man / Dashboard</title>
+            </Helmet>
         <div className="flex">
             {/* dashboard side bar */}
             <div className="w-64 min-h-screen bg-blue-400">
@@ -84,6 +90,7 @@ const Dashboard = () => {
                 <Outlet></Outlet>
             </div>
         </div>
+      </>
     );
 };
 
