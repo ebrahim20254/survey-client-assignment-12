@@ -9,8 +9,7 @@ const Dashboard = () => {
     const [cart] = useCart();
     const [isAdmin] = useAdmin();
 
-    return (
-        
+    return (   
       <>
       <Helmet>
                 <title>survey-Man / Dashboard</title>
@@ -42,11 +41,6 @@ const Dashboard = () => {
                                     Manage Vote</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/cart">
-                                    <FaShoppingCart></FaShoppingCart>
-                                    My Vote Cart</NavLink>
-                            </li>
-                            <li>
                                 <NavLink to="/dashboard/users">
                                     <FaUsers></FaUsers>
                                     All Users</NavLink>
@@ -54,26 +48,11 @@ const Dashboard = () => {
                         </>
                             :
                             <>
-                                <li>
-                                    <NavLink to="/dashboard/reservation">
-                                        <FaCalendar></FaCalendar>
-                                        Reservation</NavLink>
-                                </li>
-                                {/* <li>
-                                    <NavLink to="/dashboard/cart">
-                                        <FaShoppingCart></FaShoppingCart>
-                                        My Cart ({cart.length})</NavLink>
-                                </li> */}
-                                <li>
-                                    <NavLink to="/dashboard/review">
-                                        <FaAd></FaAd>
-                                        Add a Review</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/dashboard/bookings">
-                                        <FaList></FaList>
-                                        My Bookings</NavLink>
-                                </li>
+                             <li>
+                                <NavLink to="/dashboard/cart">
+                                    <FaShoppingCart></FaShoppingCart>
+                                    My Vote Cart</NavLink>
+                            </li>
                             </>
                     }
                     {/* shared nav link */}

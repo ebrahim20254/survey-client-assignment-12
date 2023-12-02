@@ -69,7 +69,7 @@ const AllUsers = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Number</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>

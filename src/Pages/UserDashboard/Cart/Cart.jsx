@@ -42,7 +42,6 @@ const Cart = () => {
             <div className="flex justify-evenly mb-8">
                 <h2 className="text-4xl">Vote: {cart.length}</h2>
                 <h2 className="text-4xl">Total Vote : {totalVote}</h2>
-                <button className="btn btn-primary">Pay</button>
 
             </div>
 

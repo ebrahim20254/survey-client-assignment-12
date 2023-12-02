@@ -11,7 +11,7 @@ const AdminHome = () => {
     const { data: chartData = [] } = useQuery({
         queryKey: ['survey'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/order-stats');
+            const res = await axiosSecure.get('/survey-stats');
             return res.data;
         }
     })
@@ -47,7 +47,7 @@ const AdminHome = () => {
      };
 
      const pieChartData = chartData.map(data => {
-        return {name: data.category, value: data.revenue}
+        return {name: data.category, value: data.users}
     })
  
     return (

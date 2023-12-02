@@ -11,7 +11,7 @@ const Testimonial = () => {
                 subHeading="What Our Client Say"
                 heading={'Testimonials'}
             ></SectionTitle>
-            <div className=' text-center flex justify-center gap-8 '>
+            <div className='text-center flex justify-center gap-8'>
                  {/* card 1  */}
                 <div className="card w-96 bg-blue-400 transition duration-300 ease-in-out transform hover:scale-110 group-hover:opacity-75 shadow-xl">
                     <figure className="">
